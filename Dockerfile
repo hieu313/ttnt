@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy requirements.txt và cài đặt dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
+RUN mkdir result
 # Copy toàn bộ code vào container
 COPY . .
 
@@ -15,4 +15,4 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 
 # Command mặc định khi chạy container
-CMD ["python", "health_prediction.py"]
+CMD ["python", "main.py"]
